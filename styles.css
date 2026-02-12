@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana;
+    background:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.quiz-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 100%;
+    overflow: hidden;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Styling */
+.quiz-header {
+    
+    background:url("Quiz1.png") repeat center center; background-size: cover;
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.quiz-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: green;
+    width: 10%;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.progress-text {
+    font-size: 0.95em;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* Quiz Content */
+.quiz-content {
+    padding: 40px 30px;
+}
+
+.question-section {
+    margin-bottom: 30px;
+}
+
+.question-text {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Options Styling */
+.options-section {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #f9fafb;
+}
+
+.option:hover {
+    border-color: #667eea;
+    background: #f3f4ff;
+    transform: translateX(5px);
+}
+
+.option input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #667eea;
+    margin-right: 15px;
+}
+
+.option label {
+    cursor: pointer;
+    font-size: 1.05em;
+    color: #333;
+    font-weight: 500;
+    flex: 1;
+}
+
+/* Correct/Incorrect pages Styling */
+.option.correct {
+    background: #dcfce7;
+    border-color: #22c55e;
+}
+
+.option.correct label {
+    color: #15803d;
+    font-weight: 600;
+}
+
+.option.correct::before {
+    content: '✓';
+    color: #22c55e;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.option.incorrect {
+    background: #fee2e2;
+    border-color: #ef4444;
+}
+
+.option.incorrect label {
+    color: #991b1b;
+    font-weight: 600;
+}
+
+.option.incorrect::before {
+    content: '✗';
+    color: #ef4444;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.option.disabled {
+    pointer-events: none;
+}
+
+/* Feedback Section */
+.feedback-section {
+    margin: 25px 0;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f0f9ff;
+    border-left: 4px solid #0ea5e9;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.feedback-section.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feedback-message {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.feedback-message.correct {
+    color: #15803d;
+}
+
+.feedback-message.incorrect {
+    color: #991b1b;
+}
+
+.feedback-explanation {
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+/* Buttons Section */
+.buttons-section {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 40px;
+    font-size: 1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 180px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-submit:hover {
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-next {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    color: white;
+}
+
+.btn-next:hover {
+    box-shadow: 0 10px 25px rgba(74, 222, 128, 0.4);
+}
+
+.btn-next.hidden {
+    display: none;
+}
+
+.btn-restart {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: white;
+    min-width: 200px;
+}
+
+.btn-restart:hover {
+    box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
+}
+
+/* Score Section */
+.score-section {
+    padding: 40px 30px;
+    text-align: center;
+    animation: slideIn 0.5s ease-out;
+}
+
+.score-section.hidden {
+    display: none;
+}
+
+.score-container h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.score-display {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    animation: scaleIn 0.5s ease-out;
+}
+
+.final-score {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.score-percentage {
+    font-size: 1.8em;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.score-message {
+    font-size: 1.2em;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Answer Indicator */
+.answer-indicator {
+    background: #f9fafb;
+    padding: 15px 30px;
+    text-align: center;
+    border-top: 1px solid #e5e7eb;
+    color: #666;
+    font-weight: 500;
+}
+
+.correct-count {
+    color: #22c55e;
+    font-weight: 600;
+}
+
+.incorrect-count {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.separator {
+    margin: 0 10px;
+    color: #ddd;
+}

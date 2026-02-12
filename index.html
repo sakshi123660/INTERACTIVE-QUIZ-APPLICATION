@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Header Section -->
+        <div class="quiz-header">
+            <h1>Interactive Quiz</h1>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <p class="progress-text"><span id="currentQuestion">1</span> of <span id="totalQuestions">10</span></p>
+        </div>
+
+        <!-- Quiz Content Section -->
+        <div class="quiz-content">
+            <!-- Question Display -->
+            <div class="question-section">
+                <h2 id="questionText" class="question-text">Loading question...</h2>
+            </div>
+
+            <!-- Answer Options -->
+            <div class="options-section">
+                <div class="option" data-option="0">
+                    <input type="radio" name="answer" id="option1" value="0">
+                    <label for="option1" id="optionLabel1">Option 1</label>
+                </div>
+                <div class="option" data-option="1">
+                    <input type="radio" name="answer" id="option2" value="1">
+                    <label for="option2" id="optionLabel2">Option 2</label>
+                </div>
+                <div class="option" data-option="2">
+                    <input type="radio" name="answer" id="option3" value="2">
+                    <label for="option3" id="optionLabel3">Option 3</label>
+                </div>
+                <div class="option" data-option="3">
+                    <input type="radio" name="answer" id="option4" value="3">
+                    <label for="option4" id="optionLabel4">Option 4</label>
+                </div>
+            </div>
+
+            <!-- Feedback Section -->
+            <div id="feedbackSection" class="feedback-section hidden">
+                <div id="feedbackMessage" class="feedback-message"></div>
+                <p id="feedbackExplanation" class="feedback-explanation"></p>
+            </div>
+
+            <!-- Buttons Section -->
+            <div class="buttons-section">
+                <button id="submitBtn" class="btn btn-submit" onclick="submitAnswer()">Submit Answer</button>
+                <button id="nextBtn" class="btn btn-next hidden" onclick="nextQuestion()">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Score Section (Hidden until quiz ends) -->
+        <div id="scoreSection" class="score-section hidden">
+            <div class="score-container">
+                <h2>Quiz Completed!</h2>
+                <div class="score-display">
+                    <p class="final-score"><span id="finalScore">0</span> / <span id="maxScore">10</span></p>
+                    <p class="score-percentage" id="scorePercentage">0%</p>
+                </div>
+                <div class="score-message" id="scoreMessage"></div>
+                <button class="btn btn-restart" onclick="restartQuiz()">Restart Quiz</button>
+            </div>
+        </div>
+
+        <!-- Answer Indicator -->
+        <div class="answer-indicator">
+            <span class="correct-count"><span id="correctCount">0</span> Correct</span>
+            <span class="separator">|</span>
+            <span class="incorrect-count"><span id="incorrectCount">0</span> Incorrect</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
