@@ -69,3 +69,13 @@ The quiz application begins with a clean and structured interface that displays 
     Hover effects on buttons
     Smooth transitions
     These effects make the application visually attractive and interactive.
+
+
+#OUTPUT
+
+<img width="1356" height="686" alt="Image" src="https://github.com/user-attachments/assets/6c07558c-829f-4421-92af-c9857113adec" />
+<img width="1347" height="682" alt="Image" src="https://github.com/user-attachments/assets/254286b6-1786-4c4b-9e99-54d87e1fd6e3" />
+<img width="1354" height="676" alt="Image" src="https://github.com/user-attachments/assets/93a21cad-ac69-42e1-915b-aaa9389ed308" />
+<img width="1358" height="680" alt="Image" src="https://github.com/user-attachments/assets/3bf8d02a-bc93-43eb-a07e-9ad705cf0958" />
+<img width="1358" height="686" alt="Image" src="https://github.com/user-attachments/assets/90ca1962-b3b5-47de-806d-6665ec2b9659" />
+<img width="1355" height="685" alt="Image" src="https://github.com/user-attachments/assets/e7610cbf-3e95-4650-8025-dddbed7cba14" />
